@@ -1,0 +1,21 @@
+.marginHeader{
+  margin-left: 20px;
+}
+.blancoTexto{
+  color: white;
+}
+
+a{
+  color: #363635;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #757575;
+  text-decoration: none;
+}
+
+.botonsPosts{
+  display: block;
+  float: left;
+}
