@@ -15,6 +15,14 @@ if(isset($_GET['id'])){
     $queryBuilder = new QueryBuilder($connection, 'posts', 'Post');
     $queryBuilder->delete($_GET['id']);
     unlink($_GET['img']);
+
+    if(isset($_COOKIE['visitasEliminarPosts'])){
+      $visitas = $_COOKIE['visitasEliminarPosts'];
+      setcookie("visitasEliminarPosts", (intval($visitas)+1), time()+3600);
+    }else{
+      setcookie("visitasEliminarPosts", 1, time()+3600);
+    }
+
     header("Location: leerPosts.php");
     die();
   }catch(QueryBuilderException $queryBuilderException)

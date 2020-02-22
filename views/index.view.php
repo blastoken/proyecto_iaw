@@ -14,23 +14,39 @@
     </thead>
     <tbody>
       <tr>
-        <td>Index.php</td>
+        <td>Inicio</td>
         <td><?php if(isset($_COOKIE['visitasIndex'])){ echo $_COOKIE['visitasIndex']; }else{ echo 0; }?></td>
       </tr>
       <tr>
-        <td>LeerPosts.php</td>
+        <td>Crear posts</td>
+        <td><?php if(isset($_COOKIE['visitasCrearPosts'])){ echo $_COOKIE['visitasCrearPosts']; }else{ echo 0; }?></td>
+      </tr>
+      <tr>
+        <td>Todos los posts</td>
         <td><?php if(isset($_COOKIE['visitasLeerPosts'])){ echo $_COOKIE['visitasLeerPosts']; }else{ echo 0; }?></td>
       </tr>
       <tr>
-        <td>DatosUsuario.php</td>
+        <td>Editar posts</td>
+        <td><?php if(isset($_COOKIE['visitasEditarPosts'])){ echo $_COOKIE['visitasEditarPosts']; }else{ echo 0; }?></td>
+      </tr>
+      <tr>
+        <td>Eliminar posts</td>
+        <td><?php if(isset($_COOKIE['visitasEliminarPosts'])){ echo $_COOKIE['visitasEliminarPosts']; }else{ echo 0; }?></td>
+      </tr>
+      <tr>
+        <td>Visor Post</td>
+        <td><?php if(isset($_COOKIE['visitasVisorPosts'])){ echo $_COOKIE['visitasVisorPosts']; }else{ echo 0; }?></td>
+      </tr>
+      <tr>
+        <td>Datos del usuario</td>
         <td><?php if(isset($_COOKIE['visitasDatosUsuario'])){ echo $_COOKIE['visitasDatosUsuario']; }else{ echo 0; }?></td>
       </tr>
       <tr>
-        <td>Login.php</td>
+        <td>Login</td>
         <td><?php if(isset($_COOKIE['visitasLogin'])){ echo $_COOKIE['visitasLogin']; }else{ echo 0; }?></td>
       </tr>
       <tr>
-        <td>Registro.php</td>
+        <td>Registro</td>
         <td><?php if(isset($_COOKIE['visitasRegistro'])){ echo $_COOKIE['visitasRegistro']; }else{ echo 0; }?></td>
       </tr>
     </tbody>

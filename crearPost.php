@@ -40,7 +40,17 @@ if ( $_SERVER['REQUEST_METHOD']==='POST' ){
             $queryBuilder->save($post);
 
         }
+
+        if(isset($_COOKIE['visitasCrearPosts'])){
+          $visitas = $_COOKIE['visitasCrearPosts'];
+          setcookie("visitasCrearPosts", (intval($visitas)+1), time()+3600);
+        }else{
+          setcookie("visitasCrearPosts", 1, time()+3600);
+        }
         $esCorrecto = true;
+        header("Location: leerPosts.php");
+        die();
+
       }else{
         array_push($erroresPost, "El post debe contener texto...");
       }
@@ -71,6 +81,14 @@ if ( $_SERVER['REQUEST_METHOD']==='POST' ){
       if(sizeof($erroresPost)==0){
         $post = new Post($_POST['id'], $_SESSION['usuarioLogeado']['usuario'] ,$_POST['titulo'], $_POST['texto'], $imgPost);
         $queryBuilder->update($post);
+
+        if(isset($_COOKIE['visitasEditarPosts'])){
+          $visitas = $_COOKIE['visitasEditarPosts'];
+          setcookie("visitasEditarPosts", (intval($visitas)+1), time()+3600);
+        }else{
+          setcookie("visitasEditarPosts", 1, time()+3600);
+        }
+        
         header("Location: leerPosts.php");
         die();
       }
